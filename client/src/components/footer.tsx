@@ -1,3 +1,12 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -102,13 +111,30 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <a 
-                  href="#" 
-                  className="hover:text-spa-green transition-colors"
-                  data-testid="footer-link-about"
-                >
-                  Sobre Nosotros
-                </a>
+                {/* --- MODIFICACIÓN PARA "SOBRE NOSOTROS" --- */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-spa-green transition-colors" data-testid="footer-link-about">
+                      Sobre Nosotros
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-lg bg-white text-spa-dark">
+                    <DialogHeader>
+                      <DialogTitle className="font-playfair text-2xl text-spa-dark">Sobre Nosotros</DialogTitle>
+                    </DialogHeader>
+                    <div className="py-4 space-y-4 text-gray-600 max-h-[60vh] overflow-y-auto">
+                      <p>
+                        <strong>Bienvenida a Pureza de Piel.</strong>
+                      </p>
+                      <p>
+                        Nacimos en el corazón de Quibdó con la misión de ser un santuario de paz y bienestar para nuestra comunidad. Creemos que el cuidado personal es una parte esencial de una vida saludable y feliz.
+                      </p>
+                      <p>
+                        Nuestro equipo de profesionales está dedicado a ofrecerte tratamientos de la más alta calidad, utilizando productos premium y técnicas innovadoras para revitalizar tu cuerpo y alma.
+                      </p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </li>
               <li>
                 <button 
@@ -138,13 +164,28 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a 
-                  href="#" 
-                  className="hover:text-spa-green transition-colors"
-                  data-testid="footer-link-privacy"
-                >
-                  Política de Privacidad
-                </a>
+                {/* --- MODIFICACIÓN PARA "POLÍTICA DE PRIVACIDAD" --- */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button className="hover:text-spa-green transition-colors" data-testid="footer-link-privacy">
+                      Política de Privacidad
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-lg bg-white text-spa-dark">
+                    <DialogHeader>
+                      <DialogTitle className="font-playfair text-2xl text-spa-dark">Política de Privacidad</DialogTitle>
+                    </DialogHeader>
+                    <div className="py-4 space-y-4 text-gray-600 max-h-[60vh] overflow-y-auto">
+                      <p>En Pureza de Piel, valoramos tu privacidad y nos comprometemos a proteger tu información personal.</p>
+                      <h3 className="font-bold">1. Información que Recopilamos</h3>
+                      <p>Recopilamos información que nos proporcionas directamente, como tu nombre, número de teléfono y correo electrónico cuando agendas una cita o te suscribes a nuestro boletín.</p>
+                      <h3 className="font-bold">2. Uso de la Información</h3>
+                      <p>Utilizamos tu información para gestionar tus citas, mejorar nuestros servicios y, con tu consentimiento, enviarte ofertas especiales.</p>
+                      <h3 className="font-bold">3. No Compartimos tu Información</h3>
+                      <p>Tu información personal no será compartida con terceros sin tu consentimiento explícito.</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </li>
             </ul>
           </div>

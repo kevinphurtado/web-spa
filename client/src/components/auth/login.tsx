@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter"; // Se agregó esta línea para el enlace
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -95,8 +96,8 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                 data-testid="input-password"
               />
             </div>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full bg-green-600 hover:bg-green-700"
               disabled={isLoading}
               data-testid="button-login"
@@ -104,9 +105,12 @@ export default function Login({ onLoginSuccess }: LoginProps) {
               {isLoading ? "Iniciando sesión..." : "Iniciar Sesión"}
             </Button>
           </form>
+          {/* Bloque de código modificado */}
           <div className="mt-6 text-center text-sm text-gray-500">
-            <p>Usuario: admin</p>
-            <p>Contraseña: admin123</p>
+            <Link href="/" className="underline hover:text-green-800 transition-colors">
+              <i className="fas fa-arrow-left mr-1"></i>
+              Volver al inicio
+            </Link>
           </div>
         </CardContent>
       </Card>

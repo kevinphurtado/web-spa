@@ -260,8 +260,8 @@ export class MemStorage implements IStorage {
     // Seed admin user
     const adminUser = {
       id: randomUUID(),
-      username: "admin",
-      password: "admin123",
+      username: "Pureza",
+      password: "*Pureza2024+",
       role: "admin"
     };
     this.users.set(adminUser.id, adminUser);
